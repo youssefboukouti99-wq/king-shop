@@ -1,128 +1,167 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IKON Clothing</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King Shop</title>
 
-    header {
-      background: #111;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: Poppins, sans-serif; 
+            background: #f4f4f4;
+        }
 
-    .section-title {
-      text-align: center;
-      font-size: 26px;
-      margin: 40px 0 10px;
-      font-weight: bold;
-    }
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: black;
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
 
-    .category {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+        /* LOGO ANIMATION */
+        .logo {
+            font-size: 28px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            animation: float 2s infinite ease-in-out;
+        }
 
-    .item {
-      background: #fff;
-      padding: 15px;
-      border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      text-align: center;
-      transition: 0.3s;
-    }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0); }
+        }
 
-    .item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-    }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
 
-    .item img {
-      width: 100%;
-      border-radius: 10px;
-    }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+            transition: 0.3s;
+        }
 
-    .price {
-      margin-top: 10px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #222;
-    }
-      a { transition:0.25s; }
-    nav ul li a:hover { color:#0af; transform:scale(1.1); }
-      /* Logo animation */
-    @keyframes logoPulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.12); }
-      100% { transform: scale(1); }
-    }
-    nav img:hover {
-      animation: logoPulse 0.8s ease-in-out;
-    }
-  </style>
+        nav ul li a:hover {
+            color: #00bfff;
+            transform: scale(1.1);
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #555;
+        }
+
+        /* PRODUCTS SECTION */
+        .products-title {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            padding: 40px;
+        }
+
+        .product {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 0 7px rgba(0,0,0,0.1);
+        }
+
+        .product:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+    </style>
 </head>
+
 <body>
 
-<header>
-    <nav style="display:flex; justify-content:space-between; align-items:center; padding:10px 25px; background:#111; box-shadow:0 3px 10px #0004; border-radius:0 0 12px 12px;">
-      <div style="display:flex; align-items:center; gap:12px;">
-        <img src="logo.png" alt="Logo" style="height:50px; border-radius:8px;">
-        <span style="color:white; font-size:22px; font-weight:600;">Youssef Store</span>
-      </div>
-      <ul style="display:flex; list-style:none; gap:25px; margin:0; padding:0;">
-        <li><a href="#" style="color:white; text-decoration:none; font-size:16px;">الرئيسية</a></li>
-        <li><a href="#products" style="color:white; text-decoration:none; font-size:16px;">المنتجات</a></li>
-        <li><a href="#contact" style="color:white; text-decoration:none; font-size:16px;">تواصل معنا</a></li>
-      </ul>
+    <nav>
+        <div class="logo">KING SHOP</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="https://wa.me/212675592742">Contact</a></li>
+        </ul>
     </nav>
-  </header>
 
-<div class="section-title">🧥 قسم الـ Hoodies</div>
-<div class="category">
-  <div class="item">
-    <img src="hoodie1.png" alt="Hoodie" />
-    <div class="price">300DH</div>
-  </div>
-  <div class="item">
-    <img src="hoodie2.png" alt="Hoodie" />
-    <div class="price">300DH</div>
-  </div>
-  <div class="item">
-    <img src="hoodie3.png" alt="Hoodie" />
-    <div class="price">300DH</div>
-  </div>
-</div>
+    <section class="hero">
+        <h1>Welcome to KING SHOP</h1>
+        <p>Best hoodies & T-shirts with premium quality</p>
+    </section>
 
-<div class="section-title">👕 قسم الـ T‑Shirts</div>
-<div class="category">
-  <div class="item">
-    <img src="tshirt1.png" alt="T‑Shirt" />
-    <div class="price">150DH</div>
-  </div>
-  <div class="item">
-    <img src="tshirt2.png" alt="T‑Shirt" />
-    <div class="price">150DH</div>
-  </div>
-  <div class="item">
-    <img src="tshirt3.png" alt="T‑Shirt" />
-    <div class="price">150DH</div>
-  </div>
-</div>
+    <h2 id="products" class="products-title">🔥 منتجاتنا 🔥</h2>
+
+    <div class="products">
+
+        <div class="product">
+            <img src="hoodie.png" alt="hoodie">
+            <h3>Hoodie</h3>
+            <p class="price">300 DH</p>
+        </div>
+
+        <div class="product">
+            <img src="tshirt.png" alt="tshirt">
+            <h3>T-Shirt</h3>
+            <p class="price">150 DH</p>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2025 King Shop — All rights reserved
+    </footer>
 
 </body>
 </html>
